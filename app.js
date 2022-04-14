@@ -24,13 +24,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 
+
+
 app.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express!!!' });
 });
+
+app.get('/conflict-experiment', function(req, res, next) {
+  res.render('conflict-experiment', { title: 'Express!' });
+});
+
 
 app.get('/hello', function(req, res, next) {
   res.render('hello');
 });
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -47,6 +55,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 
 mongoose
   .connect('mongodb://localhost/DOhackathon') 
