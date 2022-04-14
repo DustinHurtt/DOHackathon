@@ -61,6 +61,16 @@ app.get('/favorites', function(req, res, next) {
   })
 });
 
+app.get('/miami-favorite', function(req, res, next) {
+  User.find()
+  .then(function(favs){
+  res.render('miami-favorite', {favs: favs});
+  })
+  .catch(function(error){
+    console.log(error)
+  })
+});
+
 
 
 // catch 404 and forward to error handler
