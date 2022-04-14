@@ -24,6 +24,33 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 
+let newUsers = [
+  {
+  user: "Jhon" ,
+  lastName: "Smith",
+  city: "Miami",
+  zipCode: 33136,
+  favoriteFood: "Pizza",
+  morningOrNightPerson: "Morning Person"
+},
+{
+  user: "Martha" ,
+  lastName: "Washington",
+  city: "Miami Beach" ,
+  zipCode: 33139,
+  favoriteFood: "burger",
+  morningOrNightPerson: "Night Person"
+},
+{
+  user: "Elon" ,
+  lastName: "Musk" ,
+  city: "Homestead" ,
+  zipCode: 33032,
+  favoriteFood: "Pasta" ,
+  morningOrNightPerson:
+}
+]
+
 
 
 app.get('/', function(req, res, next) {
