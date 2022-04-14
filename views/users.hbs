@@ -1,0 +1,10 @@
+<h2>This is the user page</h2>
+<ul>
+    {{#each newUsers}}
+
+    <h4>{{this.user}} {{this.name}}</h4>
+    <p>{{this.city}}</p>
+    
+    <a href="/users/{{this._id}}">Check out their details</a>
+    {{/each}}
+</ul>

@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const User = require('./models/User.models');
 
 var app = express();
 
@@ -30,10 +31,16 @@ app.get('/', function(req, res, next) {
   res.render('index', { title: 'Favorites of Miami' });
 });
 
-app.get('/conflict-experiment', function(req, res, next) {
-  res.render('conflict-experiment', { title: 'Express!' });
+app.get('/users', function(req, res, next) {
+  User.find()
+  .then(function(newUsers){
+  res.render('users', {newUsers: newUsers});
+  })
+  .catch(function(error){
+    console.log(error)
+  })
+  
 });
-
 
 app.get('/hello', function(req, res, next) {
   res.render('hello');
