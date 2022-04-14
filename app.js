@@ -41,6 +41,16 @@ app.get('/users', function(req, res, next) {
   })
   
 });
+app.get('/users/:userid', function(req, res, next) {
+  User.findById(req.params.userid)
+  .then(function(foundUser){
+  res.render('details', {foundUser: foundUser});
+  })
+  .catch(function(error){
+    console.log(error)
+  })
+  
+});
 
 app.get('/hello', function(req, res, next) {
   res.render('hello');
