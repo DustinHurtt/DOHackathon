@@ -38,9 +38,9 @@ app.get('/users', function(req, res, next) {
   })
   .catch(function(error){
     console.log(error)
-  })
-  
+  })  
 });
+
 app.get('/users/:userid', function(req, res, next) {
   User.findById(req.params.userid)
   .then(function(foundUser){
@@ -48,13 +48,19 @@ app.get('/users/:userid', function(req, res, next) {
   })
   .catch(function(error){
     console.log(error)
-  })
-  
+  })  
 });
 
-app.get('/hello', function(req, res, next) {
-  res.render('hello');
+app.get('/favorites', function(req, res, next) {
+  User.find()
+  .then(function(userFavs){
+  res.render('favorites', {userFavs: userFavs});
+  })
+  .catch(function(error){
+    console.log(error)
+  })
 });
+
 
 
 // catch 404 and forward to error handler
