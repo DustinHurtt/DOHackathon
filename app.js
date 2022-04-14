@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/users', usersRouter);
 
 
+
 app.get('/', function(req, res, next) {
   res.render('index', { title: 'Express!!!' });
 });
@@ -34,7 +35,9 @@ app.get('/conflict-experiment', function(req, res, next) {
 });
 
 
-
+app.get('/hello', function(req, res, next) {
+  res.render('hello');
+});
 
 
 // catch 404 and forward to error handler
