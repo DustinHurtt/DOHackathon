@@ -2,9 +2,12 @@ const {Schema, model} = require('mongoose')
 
 const userSchema =  new Schema({
     user: {
-        type: Name,
-        required: true
-    }
+        type: String,
+        required: true,
+    },
+
+
+    
 }, {
     timeseries: true,
     timestamps: true
