@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "seed": "nodemon ./bin/seed.js",
+    "hi": "echo Hello!"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
