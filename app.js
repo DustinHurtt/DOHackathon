@@ -26,10 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-
-
 app.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express!!!' });
+  res.render('index', { title: 'Favorites of Miami' });
 });
 
 app.get('/conflict-experiment', function(req, res, next) {
